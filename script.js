@@ -84,6 +84,65 @@ console.log(`Current stock: `, stockProducts);
 console.log(`shopping basket: `, shoppingBasket);
 
 moveFromStockToBascket('Hat');
+
 console.log(`Current stock: `, stockProducts);
 console.log(`shopping basket: `, shoppingBasket);
 
+// functii anonime
+
+const printHello = function () {
+    console.log('hello');
+};
+
+printHello();
+
+function mapArray(arrayToMap, mappingFunction) {
+    const newArray = [];
+    for (const element of arrayToMap) {
+        let mappingFunctionResult = mappingFunction(element)
+        newArray.push(mappingFunctionResult);
+    }
+
+    return newArray;
+}
+
+const arrayToMap = [1, 2, 3];
+const doubledArray = mapArray(arrayToMap, function (el) {
+    return el * 2;
+});
+
+console.log(`arrayToMap: ${arrayToMap}`);
+console.log(`doubledArray: ${doubledArray}`);
+
+const doubled2 = arrayToMap.map(function (el) {
+    return el * 2;
+});
+console.log(`doubled2: ${doubled2}`);
+
+
+// arrow functions (functii sageata)
+
+const sayHello = () => {
+    console.log('hello');
+};
+
+sayHello();
+
+const sayHelloTo = (personName) => {
+    console.log(`Hello ${personName}`);
+};
+
+sayHelloTo('Razvan');
+
+const getGreeting = (greetedPerson) => {
+    return `Greetings ${greetedPerson}!`;
+};
+
+let greeting = getGreeting('John');
+console.log(greeting);
+greeting = getGreeting('Maria');
+console.log(greeting);
+
+
+const doubled3 = arrayToMap.map(el => el * 2);
+console.log(`doubled3: ${doubled3}`);
